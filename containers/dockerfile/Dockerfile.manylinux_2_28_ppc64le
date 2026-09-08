@@ -2,7 +2,7 @@ FROM quay.io/pypa/manylinux_2_28_ppc64le
 
 SHELL ["/bin/bash", "-c"]
 
-ENV GOSU_VERSION=1.10
+ENV GOSU_VERSION=1.17
 
 COPY scripts/install_gosu.sh /scripts/
 
