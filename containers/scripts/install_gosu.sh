@@ -17,6 +17,9 @@ case "${arch}" in
   i386 | i686)
     gosu_arch="i386"
     ;;
+  ppc64le | ppc64el)
+    gosu_arch="ppc64el"
+    ;;
   *)
     echo "Unsupported gosu architecture: ${arch}" >&2
     exit 1
@@ -34,6 +37,9 @@ case "${GOSU_VERSION}:${gosu_arch}" in
     ;;
   1.10:i386)
     gosu_sha256="2dfac0dd8830ebccea486d90472b48e68de5a543d9fb50bea933bbe6a9c8d610"
+    ;;
+  1.10:ppc64el)
+    gosu_sha256="6c280687ce1db7eb8565079c410da1bfaaad4769b09bdfa192efbd224a2abc1c"
     ;;
   *)
     echo "Unsupported gosu version/architecture for checksum verification: ${GOSU_VERSION}/${gosu_arch}" >&2

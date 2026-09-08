@@ -1,0 +1,19 @@
+FROM quay.io/pypa/manylinux_2_28_ppc64le
+
+SHELL ["/bin/bash", "-c"]
+
+ENV GOSU_VERSION=1.10
+
+COPY scripts/install_gosu.sh /scripts/
+
+RUN dnf -y update && dnf -y install java-17-openjdk-devel
+
+# Install lightweight sudo (not bound to TTY)
+RUN sh /scripts/install_gosu.sh
+
+# Default entry-point to use if running locally
+# It will preserve attributes of created files
+COPY entrypoint.sh /scripts/
+
+WORKDIR /workspace
+ENTRYPOINT ["/scripts/entrypoint.sh"]
