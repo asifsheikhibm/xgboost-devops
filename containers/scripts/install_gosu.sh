@@ -39,7 +39,7 @@ case "${GOSU_VERSION}:${gosu_arch}" in
     gosu_sha256="2dfac0dd8830ebccea486d90472b48e68de5a543d9fb50bea933bbe6a9c8d610"
     ;;
   1.17:ppc64el)
-    gosu_sha256="10c6b2951718f5ce6e7767e1b7e6b5d2a738945ddfb12c66f06c3e1e6e38d2df"
+    gosu_sha256="1891acdcfa70046818ab6ed3c52b9d42fa10fbb7b340eb429c8c7849691dbd76"
     ;;
   *)
     echo "Unsupported gosu version/architecture for checksum verification: ${GOSU_VERSION}/${gosu_arch}" >&2
